@@ -1,0 +1,19 @@
+import 'package:modular_routes/app/modules/home/home_controller.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:modular_routes/app/modules/home/home_page.dart';
+import 'package:modular_routes/app/modules/route_one/route_one_module.dart';
+
+class HomeModule extends ChildModule {
+  @override
+  List<Bind> get binds => [
+        Bind((i) => HomeController()),
+      ];
+
+  @override
+  List<Router> get routers => [
+        Router('/', child: (_, args) => HomePage()),
+        Router('/route-one', module: RouteOneModule()),
+      ];
+
+  static Inject get to => Inject<HomeModule>.of();
+}
