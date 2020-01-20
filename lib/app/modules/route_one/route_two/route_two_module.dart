@@ -11,7 +11,6 @@ class RouteTwoModule extends ChildModule {
   @override
   List<Router> get routers => [
         Router('/', child: (_, args) => RouteTwoPage()),
-        Router('/route-three', module: RouteTwoModule()),
       ];
 
   static Inject get to => Inject<RouteTwoModule>.of();
