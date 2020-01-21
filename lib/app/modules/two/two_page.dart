@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class RouteOnePage extends StatefulWidget {
+class TwoPage extends StatefulWidget {
   final String title;
-  const RouteOnePage({Key key, this.title = "RouteOne"}) : super(key: key);
+  const TwoPage({Key key, this.title = "Two"}) : super(key: key);
 
   @override
-  _RouteOnePageState createState() => _RouteOnePageState();
+  _TwoPageState createState() => _TwoPageState();
 }
 
-class _RouteOnePageState extends State<RouteOnePage> {
+class _TwoPageState extends State<TwoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +19,13 @@ class _RouteOnePageState extends State<RouteOnePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Page One'),
+            Text('Two'),
             SizedBox(height: 20,),
-            RaisedButton(
-              child: Text('Route Two -->'),
+            /*RaisedButton(
               onPressed: (){
-                Navigator.pushNamed(context, '/route-two');
+                Navigator.pushNamedAndRemoveUntil(context, '/one/two', ModalRoute.withName('/'));
               },
-            ),
+            ),*/
           ],
         ),
       ),

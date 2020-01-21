@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modular_routes/app/modules/home/home_controller.dart';
 
 class HomePage extends StatefulWidget {
   final String title;
@@ -9,6 +10,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  HomeController homeController = HomeController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,13 @@ class _HomePageState extends State<HomePage> {
             RaisedButton(
               child: Text('Route One -->'),
               onPressed: (){
-                Navigator.pushNamed(context, '/route-one');
+                Navigator.pushNamed(context, '/one');
+              },
+            ),
+            RaisedButton(
+              child: Text('Pass Parameters'),
+              onPressed: (){
+                Navigator.pushNamed(context, '/main-pass-parameter');
               },
             ),
           ],
